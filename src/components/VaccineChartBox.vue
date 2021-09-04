@@ -11,20 +11,26 @@
 import Chart from 'chart.js';
 
 export default {
-  name: 'ChartBoxes',
+  name: 'VaccineChartBox',
   props: ['chartData', 'currentCountry', 'chartType'],
 
   watch: {
     chartData: function() {
+      fil;
       this.chartIt();
     },
+  },
+  created() {
+    this.chartData.dailyPerMillion.pop();
+    this.chartData.dailyPerMillion.pop();
+    this.chartData.dailyPerMillion.pop();
   },
 
   methods: {
     chartIt() {
-      const totalCases = this.chartData.casesNum;
-      const totalDate = this.chartData.casesDates;
-      const totalDeath = this.chartData.deathsNum;
+      const totalDoses = this.chartData.vaccineNum;
+      const totalDate = this.chartData.vaccineDates;
+      const dailyPerMillion = this.chartData.dailyPerMillion;
 
       const chartContainer = document.getElementById(
         this.chartType + 'chart-container'
@@ -44,10 +50,9 @@ export default {
             {
               label: this.chartType,
               fill: false,
-              data: this.chartType == 'Cases' ? totalCases : totalDeath,
-              backgroundColor:
-                this.chartType == 'Cases' ? '#1e40af' : '#dc2626',
-              borderColor: this.chartType == 'Cases' ? '#1e40af' : '#dc2626',
+              data: this.chartType == 'Doses' ? totalDoses : dailyPerMillion,
+              backgroundColor: '#3B82F6',
+              borderColor: '#3B82F6',
               borderWidth: 5,
             },
           ],
@@ -74,9 +79,11 @@ export default {
           title: {
             display: true,
 
-            text: `Total ${this.chartType == 'Cases' ? 'Cases' : 'Deaths'} in ${
-              this.currentCountry
-            }`,
+            text: ` ${
+              this.chartType == 'Doses'
+                ? 'Total Doses Administered'
+                : 'Daily Doses Per Million'
+            } in ${this.currentCountry}`,
           },
           elements: {
             point: {

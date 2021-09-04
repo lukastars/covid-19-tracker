@@ -1,0 +1,34 @@
+https://www.disease.sh/v3/covid-19/all  
+//global daily new (cases, death )  total (cases, death) for data card
+:stats to cardData use methods to change stats based on the chosen option 
+
+
+https://disease.sh/v3/covid-19/historical/all?lastdays=all 
+//global  total cases&death everydate(for graph only)
+
+
+
+
+
+https://www.disease.sh/v3/covid-19/countries 
+// all Counteries daily new (cases,death) total (cases,death) for select options *not for graph
+:countries jsut bind to the select
+
+iprefer this way ^ of using this api for select options and to get each country card data and use the last api for the chart data
+
+https://www.disease.sh/v3/covid-19/countries/JP?allowNull=true 
+// get one country  daily new (cases,death) total (cases,death) for data card *not for graph
+:stats to cardData use methods to change stats based on the chosen option 
+
+https://disease.sh/v3/covid-19/historical/jp?lastdays=all 
+// one country total cases&death everydate (graph only)
+
+
+updated every 24 hours)
+https://disease.sh/v3/covid-19/vaccine/coverage?lastdays=all&fullData=true
+// get global vaccine data (for chart/card)
+
+https://disease.sh/v3/covid-19/vaccine/coverage/countries/egypt?lastdays=all&fullData=true
+// get one country vaccine (chart/card) data
+
+I NEED DARK MODE

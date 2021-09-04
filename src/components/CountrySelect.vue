@@ -2,11 +2,11 @@
   <select
     @change="onChange"
     v-model="selected"
-    class="text-sm form-select w-3/4 m-auto block  border p-3 rounded shadow-md"
+    class="text-sm form-select w-3/4 m-auto block  border p-3 rounded shadow-md text-gray-700"
   >
     <option disabled value="0">Please select Country</option>
-    <option v-for="country in countries" :value="country.ID">
-      {{ country.Country }}
+    <option v-for="country in countries" :value="country.id">
+      {{ country.name }}
     </option>
   </select>
 </template>
@@ -20,10 +20,11 @@ export default {
       selected: 0,
     };
   },
+
   methods: {
     onChange() {
-      const country = this.countries.find((item) => item.ID === this.selected);
-      this.$emit('get-country', country);
+      const country = this.countries.find((item) => item.id === this.selected);
+      this.$emit('get-country', country.name);
     },
   },
 };

@@ -1,20 +1,20 @@
 <template>
-  <div class="grid md:grid-cols-2 gap-4">
+  <div class="grid md:grid-cols-2 gap-4 mt-8">
     <!--Box 1-->
     <div class="w-full m-auto shadow-md bg-white p-10 text-center rounded-lg">
       <h3 class="text-2xl text-gray-600  mb-4">
-        <i class="fas fa-hospital-user text-blue-800"></i> Cases
+        <i class="fas fa-syringe text-blue-500"></i> Doses Administered
       </h3>
 
-      <div class="text-2xl mb-4 text-blue-800 ">
+      <div class="text-2xl mb-4 text-blue-500 ">
         <span class="font-bold"
-          >New: +{{ numberWithCommas(stats.newCases) }}</span
+          >New: +{{ numberWithCommas(stats.lastDayVaccine) }}</span
         >
       </div>
 
       <div class="text-1xl mb-4">
         <span class="font-bold text-gray-700"
-          >Total: {{ numberWithCommas(stats.totalCases) }}
+          >Total: {{ numberWithCommas(stats.totalVaccine) }}
         </span>
       </div>
     </div>
@@ -22,19 +22,20 @@
     <!--Box 2-->
     <div class="w-full m-auto shadow-md bg-white p-10 text-center rounded-lg">
       <h3 class="text-2xl text-gray-600  mb-4">
-        <i class="fas fa-skull-crossbones text-red-600"></i> Deaths
+        <i class="far fa-chart-bar text-blue-500"></i> Other Statistics
       </h3>
 
-      <div class="text-2xl text-red-600 mb-4">
+      <div class="text-2xl mb-4 text-blue-500 ">
         <span class="font-bold"
-          >New: +{{ numberWithCommas(stats.newDeaths) }}</span
+          >Daily Per Million:
+          {{ numberWithCommas(stats.dailyPerMillion) }}</span
         >
       </div>
 
       <div class="text-1xl mb-4">
         <span class="font-bold text-gray-700"
-          >Total: {{ numberWithCommas(stats.totalDeaths) }}</span
-        >
+          >Total Per Hundred: {{ numberWithCommas(stats.totalPerHundred) }}
+        </span>
       </div>
     </div>
   </div>
@@ -42,7 +43,7 @@
 
 <script>
 export default {
-  name: 'DataBoxes',
+  name: 'VaccineDataBox',
   props: ['stats'],
 
   methods: {
