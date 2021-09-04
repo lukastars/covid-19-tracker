@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white shadow-md rounded-lg w-full m-auto mt-10 sm:h-56  md:h-h-72 lg:h-96 p-3"
+    class="bg-white shadow-md rounded-lg w-full m-auto mt-10  p-3"
     :id="chartType + 'chart-container'"
   >
     <canvas :id="chartType"></canvas>

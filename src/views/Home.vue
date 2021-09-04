@@ -33,7 +33,7 @@
       </div>
 
       <DataBoxes :stats="stats" />
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid  md:grid-cols-2 sm:grid-cols-1 gap-4">
         <ChartBoxes
           :chartData="chartData"
           :currentCountry="currentCountry"
