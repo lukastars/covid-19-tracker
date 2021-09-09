@@ -33,7 +33,7 @@
       </div>
 
       <DataBoxes :stats="stats" />
-      <div class="grid  md:grid-cols-2 sm:grid-cols-1 gap-4">
+      <div class="grid  md:grid-cols-2 grid-cols-1 gap-4">
         <ChartBoxes
           :chartData="chartData"
           :currentCountry="currentCountry"
@@ -54,7 +54,7 @@
       </div>
       <VaccineDataBox :stats="stats" />
 
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
         <VaccineChartBox
           :chartData="chartData"
           :currentCountry="currentCountry"
@@ -105,7 +105,7 @@ export default {
         {
           id: 1,
           name: 'Global',
-          flag: 'https://image.emojisky.com/740/42740-middle.png',
+          flag: require('@/assets/global-icon.png'),
         },
       ],
 
